@@ -13,11 +13,14 @@ from sklearn.tree import DecisionTreeClassifier
 from ucimlrepo import fetch_ucirepo
 
 from pilot_classification import PILOTClassifier, RaFFLEClassifier
+import sys
 
-SEED = 42
+SEED = int(sys.argv[1]) if len(sys.argv) > 1 else 42
+
 OUT = pathlib.Path("experiments/classification/results")
 OUT.mkdir(parents=True, exist_ok=True)
-RESULTS = OUT / "spambase_results.csv"
+
+RESULTS = OUT / f"spambase_results_seed{SEED}.csv"
 
 data = fetch_ucirepo(id=94)
 X = data.data.features.to_numpy(dtype=float)
