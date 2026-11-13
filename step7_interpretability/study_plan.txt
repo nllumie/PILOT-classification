@@ -1,0 +1,57 @@
+STEP 7 INTERPRETABILITY PILOT STUDY - PLAN (written before data collection)
+
+Dataset: Banknote Authentication (UCI id 267), 1,372 rows, 4 numerical features.
+Classes: genuine (label 0) and forged (label 1, positive class as in Step 5).
+Split: stratified 80/20, seed 42, identical to the Step 5 train-test run.
+Models (frozen after fitting on the training split; saved in models.joblib):
+  LogReg        sklearn pipeline: median imputer -> StandardScaler -> LogisticRegression
+  RandomForest  sklearn pipeline: median imputer -> RandomForestClassifier(100 trees, min_samples_leaf=5)
+  RaFFLE        pipeline: median imputer -> RaFFLEClassifier(30 trees, max_depth=4, min_samples_leaf=10)
+  Settings are the Step 5 settings; nothing was tuned for this study.
+
+Explanation methods (experiments/classification/explanations.py, tests/test_explanations.py):
+  LogReg        exact, logit space: contribution_j = coefficient_j x standardized value_j
+  RandomForest  exact, probability space: change in leaf class fraction along each tree's
+                path, credited to the split feature, averaged over trees
+  RaFFLE        exact per tree (logit decomposition along the path; constant parts to
+                baseline, feature parts to the node's feature); forest-level attribution
+                is the average of per-tree logit contributions. The forest averages
+                probabilities, so forest-level attribution is APPROXIMATE; the gap is
+                recorded per case in answer_key.csv (approximation_gap) and must be small.
+  Every card was checked against the model's own predict/predict_proba
+  (faithfulness_report.csv) before any participant saw it.
+  "Main feature" = largest absolute contribution for THIS case under the method above.
+  Cases were selected with a margin >= 1.5 between the largest and second-largest
+  contribution so the answer key has no tie.
+
+Participants: target 12-20 adults, mix of ML familiarity (none / some / regular),
+recorded per participant. This is a recruitment target, not a power calculation.
+Two pilot participants first; their data are excluded from the main results.
+Consent: participants read the information text in participant_questions.txt;
+participation is voluntary; only participant IDs are stored. Institutional review
+requirements were checked with the supervisor before recruiting (record outcome here: ____).
+
+Cases: 2 study cases per model (6 per participant) + 1 practice case per model.
+Per model: one "clear" prediction (confidence >= 0.90) and one "close" one
+(confidence 0.60-0.85); both classes represented where possible; no test row reused
+across models for the same participant. Model order rotates (3 orders), case order
+alternates (order_assignments.csv).
+
+Tasks per case (participant_questions.txt):
+  1. Predict the model's output (inputs only shown)        -> scored vs model prediction
+  2. Main feature (after card is revealed)                 -> scored vs answer key
+  3. Why, in 1-2 sentences                                  -> rubric 0/1/2 (below)
+  4. Clarity 1-5                                             -> rating, no correct answer
+Timing: prediction stage and explanation stage timed separately where the tool
+allows; otherwise total case time is reported and labelled as such.
+
+Rubric for task 3 (fixed before reading answers):
+  0 incorrect, unrelated, or blank
+  1 names a relevant feature but gets its direction wrong or omits its effect
+  2 correctly names the main feature and its direction for the model's prediction
+
+Analysis (analyze_study.py): per participant and model, average over the 2 cases;
+then summarise participant-level averages (mean, SD, n). Report technical and
+non-technical groups separately if each has >= 4 participants. No significance
+claims; report observed differences and spread. Keep Step 5 accuracy, Step 6
+coverage and Step 7 interpretability as separate results.

@@ -1,0 +1,36 @@
+INFORMATION FOR PARTICIPANTS (read aloud or shown first)
+You will look at short descriptions of banknote measurements and the decisions
+made by three computer models that try to tell genuine notes from forged ones.
+Your job is to work out what EACH MODEL will say and to read its explanation.
+You are not being tested on banknotes, and the model may be wrong: we only want
+to know whether you can follow the model. It takes about 15-25 minutes. You can
+stop at any time. We record your answers, the time you take, and a participant
+ID; no names.
+
+The four measurements (all numbers; higher or lower is not "better"):
+  variance   how much the image texture varies
+  skewness   how lopsided the texture distribution is
+  curtosis   how peaked / heavy-tailed the texture distribution is
+  entropy    how random the texture is
+
+Before we start: how familiar are you with machine learning?  none / some / regular
+
+PRACTICE (one per model, with feedback; not scored)
+Here is an example of how Model X decided an earlier note, with its explanation card.
+[show practice card]  Any questions about the wording?
+
+FOR EACH OF THE 6 CASES  (same wording every time)
+  Show the "Inputs:" line only.
+  Q1  "What will Model X predict for this note: genuine or forged?"      [start timer A]
+      Record the answer, stop timer A.
+  Reveal the full explanation card.                                      [start timer B]
+  Q2  "Which ONE measurement contributes most strongly to THIS prediction?"
+      (variance / skewness / curtosis / entropy)
+  Q3  "In one or two sentences: why did this model choose that class?
+       Which measurements pushed towards it, and which against?"
+  Q4  "How easy was this explanation to understand?  1 (very hard) ... 5 (very easy)"
+      Stop timer B.
+  Do not comment on whether the answer was right during the real cases.
+
+CLOSING
+  "Which model's explanations helped you most, and what was confusing?"

@@ -1,0 +1,1 @@
+participant_id,ml_familiarity,model,case_id,order,prediction_guess,main_feature_choice,reason_text,reason_score_0_2,clarity_1_to_5,prediction_seconds,explanation_seconds,notes
