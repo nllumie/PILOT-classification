@@ -10,3 +10,16 @@ build/
 pilot/cpilot.cpython-310-x86_64-linux-gnu.so
 screenlog.*
 benchmark_logs.txt
+
+# Local Python environment
+.venv/
+
+# Generated local data and logs
+Data_smoke/
+*.log
+
+# Compiled extensions and bundled libraries
+*.pyd
+*.dll
+*.so
+experiments/classification/results/experiments/classification/outputs/
