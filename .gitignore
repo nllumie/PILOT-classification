@@ -22,4 +22,5 @@ Data_smoke/
 *.pyd
 *.dll
 *.so
-experiments/classification/results/experiments/classification/outputs/
+experiments/classification/results/
+experiments/classification/outputs/
