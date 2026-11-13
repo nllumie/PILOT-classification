@@ -67,6 +67,27 @@ constant correction.
 - Spambase is a supplementary single-configuration run with max_features_node=7
   and 30 RaFFLE trees; it is not part of the main comparison.
 
+## Balanced vs. imbalanced conformal experiment
+- `run_balance_conformal.py` compares 5,000-row synthetic binary datasets
+  generated with the same `make_classification` parameters and seed 42, changing
+  only class weights (50/50 vs. 90/10). Label noise is disabled so the requested
+  class proportions are retained.
+- The generated data is fixed across evaluation runs. Split and model seeds
+  42, 52, and 62 match the real-dataset conformal evaluation. The existing
+  stratified four-way split is used; its partition ratios are approximate due
+  to integer rounding.
+- RaFFLE, RandomForest, and LogReg use their existing fixed settings, with
+  split conformal alpha 0.10. Summaries include overall and class-specific
+  coverage, set size rates, calibration threshold, calibration count, and test
+  class counts. Class 1 is the 10% minority class in the imbalanced condition.
+- Results are written to
+  `experiments/classification/outputs/synthetic_balance/`, separate from the
+  real-dataset outputs, with a combined `summary_all_conditions.csv`.
+- Pooled split conformal guarantees marginal rather than class-conditional
+  coverage. Minority-class coverage is descriptive and may be noisy; repeated
+  split seeds on the fixed generated datasets measure split variability, not
+  independent data-generation variability.
+
 ## Known limitations
 - Penalty constants are heuristic, not derived from theory.
 - Pure Python tree loops; RaFFLE is far slower than Random Forest.
