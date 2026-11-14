@@ -55,3 +55,7 @@ then summarise participant-level averages (mean, SD, n). Report technical and
 non-technical groups separately if each has >= 4 participants. No significance
 claims; report observed differences and spread. Keep Step 5 accuracy, Step 6
 coverage and Step 7 interpretability as separate results.
+
+Model names are blinded in booklets: Model A = LogReg, Model B = RandomForest, Model C = RaFFLE.
+Card strengths are shown as each feature's share (%) of the total absolute contribution,
+so all three models use the same scale; the main feature and direction are unchanged by this.
