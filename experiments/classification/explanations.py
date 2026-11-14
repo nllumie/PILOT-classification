@@ -28,6 +28,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Sequence
 
+from matplotlib import lines
 import numpy as np
 from scipy.special import expit, logit
 from sklearn.pipeline import Pipeline
@@ -245,18 +246,22 @@ def format_card(expl: Explanation, x: Sequence[float], feature_names: Sequence[s
     """Plain-language explanation card with identical layout for every model."""
     pos_name = class_names[sorted(class_names)[1]]
     neg_name = class_names[sorted(class_names)[0]]
-    items = sorted(expl.contributions.items(), key=lambda kv: -abs(kv[1]))[:top_k]
+    contrib = {j: expl.contributions.get(j, 0.0) for j in range(len(feature_names))}
+    total_abs = sum(abs(v) for v in contrib.values()) or 1.0
+    items = sorted(contrib.items(), key=lambda kv: -abs(kv[1]))[:top_k]
     lines = ["Inputs: " + "; ".join(f"{feature_names[j]} = {float(v):.2f}"
                                     for j, v in enumerate(x)),
              f"Model prediction: {class_names[expl.predicted_class]} "
              f"(P({pos_name}) = {expl.probability_positive:.2f})",
              "Explanation:"]
     for j, v in items:
-        direction = pos_name if v > 0 else neg_name
-        lines.append(f"  - {feature_names[j]} pushes the prediction toward "
-                     f"{direction} (strength {abs(v):.2f})")
-    if not items:
-        lines.append("  - no feature changed the prediction from the baseline")
+        share = 100.0 * abs(v) / total_abs
+        if abs(v) < 1e-12:
+            lines.append(f"  - {feature_names[j]}: no effect on this prediction")
+        else:
+            direction = pos_name if v > 0 else neg_name
+            lines.append(f"  - {feature_names[j]} pushes the prediction toward "
+                         f"{direction} ({share:.0f}% of the total effect)")
     lines.append(f"Combined result favours {class_names[expl.predicted_class]}.")
     if not expl.exact:
         lines.append("(approximate forest-level attribution)")

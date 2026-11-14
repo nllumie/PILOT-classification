@@ -2,72 +2,75 @@ case_id,model,practice,kind,variance,skewness,curtosis,entropy,inputs_text,card_
 LR1,LogReg,False,clear,-1.4446,2.1438,-0.47241,-1.6677,Inputs: variance = -1.44; skewness = 2.14; curtosis = -0.47; entropy = -1.67,"Inputs: variance = -1.44; skewness = 2.14; curtosis = -0.47; entropy = -1.67
 Model prediction: forged (P(forged) = 0.97)
 Explanation:
-  - variance pushes the prediction toward forged (strength 3.13)
-  - curtosis pushes the prediction toward forged (strength 1.90)
-  - skewness pushes the prediction toward genuine (strength 0.22)
-  - entropy pushes the prediction toward genuine (strength 0.05)
+  - variance pushes the prediction toward forged (59% of the total effect)
+  - curtosis pushes the prediction toward forged (36% of the total effect)
+  - skewness pushes the prediction toward genuine (4% of the total effect)
+  - entropy pushes the prediction toward genuine (1% of the total effect)
 Combined result favours forged."
 LR178,LogReg,False,close,-1.3,10.2678,-2.953,-5.8638,Inputs: variance = -1.30; skewness = 10.27; curtosis = -2.95; entropy = -5.86,"Inputs: variance = -1.30; skewness = 10.27; curtosis = -2.95; entropy = -5.86
 Model prediction: genuine (P(forged) = 0.18)
 Explanation:
-  - skewness pushes the prediction toward genuine (strength 6.84)
-  - curtosis pushes the prediction toward forged (strength 4.40)
-  - variance pushes the prediction toward forged (strength 2.89)
-  - entropy pushes the prediction toward genuine (strength 0.56)
+  - skewness pushes the prediction toward genuine (47% of the total effect)
+  - curtosis pushes the prediction toward forged (30% of the total effect)
+  - variance pushes the prediction toward forged (20% of the total effect)
+  - entropy pushes the prediction toward genuine (4% of the total effect)
 Combined result favours genuine."
 LRP5,LogReg,True,practice,1.2572,4.8731,-5.2861,-5.8741,Inputs: variance = 1.26; skewness = 4.87; curtosis = -5.29; entropy = -5.87,"Inputs: variance = 1.26; skewness = 4.87; curtosis = -5.29; entropy = -5.87
 Model prediction: forged (P(forged) = 0.74)
 Explanation:
-  - curtosis pushes the prediction toward forged (strength 6.76)
-  - skewness pushes the prediction toward genuine (strength 2.44)
-  - variance pushes the prediction toward genuine (strength 1.30)
-  - entropy pushes the prediction toward genuine (strength 0.56)
+  - curtosis pushes the prediction toward forged (61% of the total effect)
+  - skewness pushes the prediction toward genuine (22% of the total effect)
+  - variance pushes the prediction toward genuine (12% of the total effect)
+  - entropy pushes the prediction toward genuine (5% of the total effect)
 Combined result favours forged."
 RF3,RandomForest,False,clear,-0.40804,0.54214,-0.52725,0.6586,Inputs: variance = -0.41; skewness = 0.54; curtosis = -0.53; entropy = 0.66,"Inputs: variance = -0.41; skewness = 0.54; curtosis = -0.53; entropy = 0.66
 Model prediction: forged (P(forged) = 0.98)
 Explanation:
-  - variance pushes the prediction toward forged (strength 0.29)
-  - curtosis pushes the prediction toward forged (strength 0.12)
-  - skewness pushes the prediction toward forged (strength 0.12)
-  - entropy pushes the prediction toward forged (strength 0.00)
+  - variance pushes the prediction toward forged (55% of the total effect)
+  - curtosis pushes the prediction toward forged (22% of the total effect)
+  - skewness pushes the prediction toward forged (22% of the total effect)
+  - entropy pushes the prediction toward forged (1% of the total effect)
 Combined result favours forged."
 RF75,RandomForest,False,close,-0.33729,-0.64976,7.6659,0.72326,Inputs: variance = -0.34; skewness = -0.65; curtosis = 7.67; entropy = 0.72,"Inputs: variance = -0.34; skewness = -0.65; curtosis = 7.67; entropy = 0.72
 Model prediction: genuine (P(forged) = 0.21)
 Explanation:
-  - curtosis pushes the prediction toward genuine (strength 0.35)
-  - variance pushes the prediction toward forged (strength 0.10)
-  - entropy pushes the prediction toward forged (strength 0.02)
-  - skewness pushes the prediction toward genuine (strength 0.00)
+  - curtosis pushes the prediction toward genuine (75% of the total effect)
+  - variance pushes the prediction toward forged (20% of the total effect)
+  - entropy pushes the prediction toward forged (4% of the total effect)
+  - skewness pushes the prediction toward genuine (1% of the total effect)
 Combined result favours genuine."
 RFP0,RandomForest,True,practice,2.3718,7.4908,0.015989,-1.7414,Inputs: variance = 2.37; skewness = 7.49; curtosis = 0.02; entropy = -1.74,"Inputs: variance = 2.37; skewness = 7.49; curtosis = 0.02; entropy = -1.74
 Model prediction: genuine (P(forged) = 0.00)
 Explanation:
-  - variance pushes the prediction toward genuine (strength 0.27)
-  - skewness pushes the prediction toward genuine (strength 0.15)
-  - curtosis pushes the prediction toward genuine (strength 0.02)
-  - entropy pushes the prediction toward genuine (strength 0.01)
+  - variance pushes the prediction toward genuine (61% of the total effect)
+  - skewness pushes the prediction toward genuine (33% of the total effect)
+  - curtosis pushes the prediction toward genuine (4% of the total effect)
+  - entropy pushes the prediction toward genuine (3% of the total effect)
 Combined result favours genuine."
 RA27,RaFFLE,False,clear,-0.77848,3.4019,-3.4859,-3.5569,Inputs: variance = -0.78; skewness = 3.40; curtosis = -3.49; entropy = -3.56,"Inputs: variance = -0.78; skewness = 3.40; curtosis = -3.49; entropy = -3.56
 Model prediction: forged (P(forged) = 1.00)
 Explanation:
-  - curtosis pushes the prediction toward forged (strength 3.59)
-  - variance pushes the prediction toward forged (strength 1.90)
-  - skewness pushes the prediction toward forged (strength 0.67)
-  - entropy pushes the prediction toward forged (strength 0.02)
+  - curtosis pushes the prediction toward forged (58% of the total effect)
+  - variance pushes the prediction toward forged (31% of the total effect)
+  - skewness pushes the prediction toward forged (11% of the total effect)
+  - entropy pushes the prediction toward forged (0% of the total effect)
 Combined result favours forged.
 (approximate forest-level attribution)"
 RA140,RaFFLE,False,close,-1.8584,7.886,-1.6643,-1.8384,Inputs: variance = -1.86; skewness = 7.89; curtosis = -1.66; entropy = -1.84,"Inputs: variance = -1.86; skewness = 7.89; curtosis = -1.66; entropy = -1.84
 Model prediction: genuine (P(forged) = 0.31)
 Explanation:
-  - skewness pushes the prediction toward genuine (strength 3.56)
-  - variance pushes the prediction toward forged (strength 1.63)
-  - curtosis pushes the prediction toward forged (strength 0.91)
+  - skewness pushes the prediction toward genuine (58% of the total effect)
+  - variance pushes the prediction toward forged (27% of the total effect)
+  - curtosis pushes the prediction toward forged (15% of the total effect)
+  - entropy: no effect on this prediction
 Combined result favours genuine.
 (approximate forest-level attribution)"
 RAP267,RaFFLE,True,practice,0.74307,11.17,-1.3824,-4.0728,Inputs: variance = 0.74; skewness = 11.17; curtosis = -1.38; entropy = -4.07,"Inputs: variance = 0.74; skewness = 11.17; curtosis = -1.38; entropy = -4.07
 Model prediction: genuine (P(forged) = 0.00)
 Explanation:
-  - skewness pushes the prediction toward genuine (strength 4.91)
-  - variance pushes the prediction toward genuine (strength 0.68)
+  - skewness pushes the prediction toward genuine (88% of the total effect)
+  - variance pushes the prediction toward genuine (12% of the total effect)
+  - curtosis: no effect on this prediction
+  - entropy: no effect on this prediction
 Combined result favours genuine.
 (approximate forest-level attribution)"

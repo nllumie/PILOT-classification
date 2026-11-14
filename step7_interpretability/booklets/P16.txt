@@ -1,0 +1,202 @@
+Participant P16
+
+INFORMATION FOR PARTICIPANTS (read aloud or shown first)
+You will look at short descriptions of banknote measurements and the decisions
+made by three computer models that try to tell genuine notes from forged ones.
+Your job is to work out what EACH MODEL will say and to read its explanation.
+You are not being tested on banknotes, and the model may be wrong: we only want
+to know whether you can follow the model. It takes about 15-25 minutes. You can
+stop at any time. We record your answers, the time you take, and a participant
+ID; no names.
+
+The four measurements (all numbers; higher or lower is not "better"):
+  variance   how much the image texture varies
+  skewness   how lopsided the texture distribution is
+  curtosis   how peaked / heavy-tailed the texture distribution is
+  entropy    how random the texture is
+
+Before we start: how familiar are you with machine learning?  none / some / regular
+
+
+============================================================  (next page)
+
+PRACTICE for Model C (not scored)
+
+Inputs: variance = 0.74; skewness = 11.17; curtosis = -1.38; entropy = -4.07
+Model prediction: genuine (P(forged) = 0.00)
+Explanation:
+  - skewness pushes the prediction toward genuine (88% of the total effect)
+  - variance pushes the prediction toward genuine (12% of the total effect)
+  - curtosis: no effect on this prediction
+  - entropy: no effect on this prediction
+Combined result favours genuine.
+(approximate forest-level attribution)
+============================================================  (next page)
+
+PRACTICE for Model B (not scored)
+
+Inputs: variance = 2.37; skewness = 7.49; curtosis = 0.02; entropy = -1.74
+Model prediction: genuine (P(forged) = 0.00)
+Explanation:
+  - variance pushes the prediction toward genuine (61% of the total effect)
+  - skewness pushes the prediction toward genuine (33% of the total effect)
+  - curtosis pushes the prediction toward genuine (4% of the total effect)
+  - entropy pushes the prediction toward genuine (3% of the total effect)
+Combined result favours genuine.
+============================================================  (next page)
+
+PRACTICE for Model A (not scored)
+
+Inputs: variance = 1.26; skewness = 4.87; curtosis = -5.29; entropy = -5.87
+Model prediction: forged (P(forged) = 0.74)
+Explanation:
+  - curtosis pushes the prediction toward forged (61% of the total effect)
+  - skewness pushes the prediction toward genuine (22% of the total effect)
+  - variance pushes the prediction toward genuine (12% of the total effect)
+  - entropy pushes the prediction toward genuine (5% of the total effect)
+Combined result favours forged.
+============================================================  (next page)
+
+Case 1 of 6 (Model C)
+Inputs: variance = -1.86; skewness = 7.89; curtosis = -1.66; entropy = -1.84
+
+Q1  What will Model C predict for this note: genuine or forged?  ______
+============================================================  (next page)
+
+Case 1 of 6 (Model C): explanation
+Inputs: variance = -1.86; skewness = 7.89; curtosis = -1.66; entropy = -1.84
+Model prediction: genuine (P(forged) = 0.31)
+Explanation:
+  - skewness pushes the prediction toward genuine (58% of the total effect)
+  - variance pushes the prediction toward forged (27% of the total effect)
+  - curtosis pushes the prediction toward forged (15% of the total effect)
+  - entropy: no effect on this prediction
+Combined result favours genuine.
+(approximate forest-level attribution)
+
+Q2  Which ONE measurement contributes most strongly to THIS prediction?  ______
+Q3  In one or two sentences, why did this model choose that class?
+
+
+Q4  How easy was this explanation to understand? 1 2 3 4 5
+============================================================  (next page)
+
+Case 2 of 6 (Model C)
+Inputs: variance = -0.78; skewness = 3.40; curtosis = -3.49; entropy = -3.56
+
+Q1  What will Model C predict for this note: genuine or forged?  ______
+============================================================  (next page)
+
+Case 2 of 6 (Model C): explanation
+Inputs: variance = -0.78; skewness = 3.40; curtosis = -3.49; entropy = -3.56
+Model prediction: forged (P(forged) = 1.00)
+Explanation:
+  - curtosis pushes the prediction toward forged (58% of the total effect)
+  - variance pushes the prediction toward forged (31% of the total effect)
+  - skewness pushes the prediction toward forged (11% of the total effect)
+  - entropy pushes the prediction toward forged (0% of the total effect)
+Combined result favours forged.
+(approximate forest-level attribution)
+
+Q2  Which ONE measurement contributes most strongly to THIS prediction?  ______
+Q3  In one or two sentences, why did this model choose that class?
+
+
+Q4  How easy was this explanation to understand? 1 2 3 4 5
+============================================================  (next page)
+
+Case 3 of 6 (Model B)
+Inputs: variance = -0.34; skewness = -0.65; curtosis = 7.67; entropy = 0.72
+
+Q1  What will Model B predict for this note: genuine or forged?  ______
+============================================================  (next page)
+
+Case 3 of 6 (Model B): explanation
+Inputs: variance = -0.34; skewness = -0.65; curtosis = 7.67; entropy = 0.72
+Model prediction: genuine (P(forged) = 0.21)
+Explanation:
+  - curtosis pushes the prediction toward genuine (75% of the total effect)
+  - variance pushes the prediction toward forged (20% of the total effect)
+  - entropy pushes the prediction toward forged (4% of the total effect)
+  - skewness pushes the prediction toward genuine (1% of the total effect)
+Combined result favours genuine.
+
+Q2  Which ONE measurement contributes most strongly to THIS prediction?  ______
+Q3  In one or two sentences, why did this model choose that class?
+
+
+Q4  How easy was this explanation to understand? 1 2 3 4 5
+============================================================  (next page)
+
+Case 4 of 6 (Model B)
+Inputs: variance = -0.41; skewness = 0.54; curtosis = -0.53; entropy = 0.66
+
+Q1  What will Model B predict for this note: genuine or forged?  ______
+============================================================  (next page)
+
+Case 4 of 6 (Model B): explanation
+Inputs: variance = -0.41; skewness = 0.54; curtosis = -0.53; entropy = 0.66
+Model prediction: forged (P(forged) = 0.98)
+Explanation:
+  - variance pushes the prediction toward forged (55% of the total effect)
+  - curtosis pushes the prediction toward forged (22% of the total effect)
+  - skewness pushes the prediction toward forged (22% of the total effect)
+  - entropy pushes the prediction toward forged (1% of the total effect)
+Combined result favours forged.
+
+Q2  Which ONE measurement contributes most strongly to THIS prediction?  ______
+Q3  In one or two sentences, why did this model choose that class?
+
+
+Q4  How easy was this explanation to understand? 1 2 3 4 5
+============================================================  (next page)
+
+Case 5 of 6 (Model A)
+Inputs: variance = -1.30; skewness = 10.27; curtosis = -2.95; entropy = -5.86
+
+Q1  What will Model A predict for this note: genuine or forged?  ______
+============================================================  (next page)
+
+Case 5 of 6 (Model A): explanation
+Inputs: variance = -1.30; skewness = 10.27; curtosis = -2.95; entropy = -5.86
+Model prediction: genuine (P(forged) = 0.18)
+Explanation:
+  - skewness pushes the prediction toward genuine (47% of the total effect)
+  - curtosis pushes the prediction toward forged (30% of the total effect)
+  - variance pushes the prediction toward forged (20% of the total effect)
+  - entropy pushes the prediction toward genuine (4% of the total effect)
+Combined result favours genuine.
+
+Q2  Which ONE measurement contributes most strongly to THIS prediction?  ______
+Q3  In one or two sentences, why did this model choose that class?
+
+
+Q4  How easy was this explanation to understand? 1 2 3 4 5
+============================================================  (next page)
+
+Case 6 of 6 (Model A)
+Inputs: variance = -1.44; skewness = 2.14; curtosis = -0.47; entropy = -1.67
+
+Q1  What will Model A predict for this note: genuine or forged?  ______
+============================================================  (next page)
+
+Case 6 of 6 (Model A): explanation
+Inputs: variance = -1.44; skewness = 2.14; curtosis = -0.47; entropy = -1.67
+Model prediction: forged (P(forged) = 0.97)
+Explanation:
+  - variance pushes the prediction toward forged (59% of the total effect)
+  - curtosis pushes the prediction toward forged (36% of the total effect)
+  - skewness pushes the prediction toward genuine (4% of the total effect)
+  - entropy pushes the prediction toward genuine (1% of the total effect)
+Combined result favours forged.
+
+Q2  Which ONE measurement contributes most strongly to THIS prediction?  ______
+Q3  In one or two sentences, why did this model choose that class?
+
+
+Q4  How easy was this explanation to understand? 1 2 3 4 5
+============================================================  (next page)
+
+Which model's explanations helped you most, and what was confusing?
+
+
